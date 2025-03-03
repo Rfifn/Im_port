@@ -121,9 +121,21 @@
                         </a>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <img src="/api/placeholder/400/400" alt="placeholder"
-                        class="rounded-lg shadow-xl max-w-full h-auto transform -rotate-3" />
+                <!-- Container dengan styling Tailwind -->
+                <div class="md:w-1/2 flex justify-center relative group">
+    <!-- Gambar A (yang terlihat secara default) -->
+                    <img 
+                       src="/api/placeholder/400/400" 
+                       alt="Gambar A"
+                       class="rounded-lg shadow-xl max-w-full h-auto transform -rotate-3 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                    />
+    
+    <!-- Gambar B (yang akan muncul saat hover) -->
+                    <img 
+                       src="/api/placeholder/400/400" 
+                       alt="Gambar B"
+                       class="rounded-lg shadow-xl max-w-full h-auto transform -rotate-3 absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"
+                    />
                 </div>
             </div>
         </div>
