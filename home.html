@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="../dist/output.css" rel="stylesheet">
@@ -124,20 +125,14 @@
                 <!-- Container dengan styling Tailwind -->
                 <div class="md:w-1/2 flex justify-center relative group">
                     <!-- Gambar A (yang terlihat secara default) -->
-                    <img 
-                       src="../src/ph1.png" 
-                       alt="Gambar A"
-                       class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
-                    />
-                
+                    <img src="../src/ph1.png" alt="Gambar A"
+                        class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
+
                     <!-- Gambar B (yang akan muncul saat hover, tetap di tempat) -->
-                    <img 
-                       src="../src/ph2.png" 
-                       alt="Gambar B"
-                       class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out absolute"
-                    />
+                    <img src="../src/ph2.png" alt="Gambar B"
+                        class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out absolute" />
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -250,108 +245,182 @@
                 </div> -->
 
                 <!-- Project -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="src/ichlar.png" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1">
+                <div
+                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="src/ichlar.png" alt="placeholder"
+                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 bg-white relative z-10">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Ichlar Project</h3>
-                        <p class="text-gray-600 mb-4">
-                            Design and development of a solar system learning website.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                        <div class="h-20 overflow-hidden mb-4">
+                            <p class="text-gray-600">
+                                Design and development of an interactive solar system learning website with immersive 3D
+                                visualizations.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">CSS</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                                <i class="fas fa-globe text-xl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="src/wolu.png" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-purple-500 text-white text-xs font-bold px-2 py-1">
+                <div
+                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="src/wolu.png" alt="placeholder"
+                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Wolu Class</h3>
-                        <p class="text-gray-600 mb-4">
-                            Design and development of a learning management system for schools.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                    <div class="p-6 bg-white relative z-10">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Wolu Classroom</h3>
+                        <div class="h-20 overflow-hidden mb-4">
+                            <p class="text-gray-600">
+                                Design and development of a learning management system for schools.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">CSS</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                                <i class="fas fa-globe text-xl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="src/rds.png" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-2 py-1">
+                <div
+                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="src/rds.png" alt="placeholder"
+                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Reycom Document Solusi Inventory</h3>
-                        <p class="text-gray-600 mb-4">
-                            Design and development of an inventory management system for companies.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                    <div class="p-6 bg-white relative z-10">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Reycom Document Solusi</h3>
+                        <div class="h-20 overflow-hidden mb-4">
+                            <p class="text-gray-600">
+                                Design and development of an inventory management system for companies.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">CSS</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                                <i class="fas fa-globe text-xl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="src/ganesha.png" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-2 py-1">
+                <div
+                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="src/ganesha.png" alt="placeholder"
+                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Ganesha Rent
-                        </h3>
-                        <p class="text-gray-600 mb-4">
-                            Design and development of a party and wedding equipment rental website and application.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                    <div class="p-6 bg-white relative z-10">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Wolu Classroom</h3>
+                        <div class="h-20 overflow-hidden mb-4">
+                            <p class="text-gray-600">
+                                Design and development of a learning management system for schools.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">HTML</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">CSS</span>
+                            <span
+                                class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" 
+   class="text-red-600 transition pointer-events-none opacity-50 cursor-not-allowed" 
+   aria-disabled="true">
+    <i class="fas fa-globe text-xl"></i>
+</a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Project -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="src/dribbble.png" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold px-2 py-1">
-                            DESIGN UI UX
+                <div
+                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="src/dribbble.png" alt="placeholder"
+                            class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                            UI DESIGN
                         </div>
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 bg-white relative z-10">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Design UI</h3>
-                        <p class="text-gray-600 mb-4">
-                            Design UI for a mobile application and website with a minimalist and modern aesthetic.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
+                        <div class="h-20 overflow-hidden mb-4">
+                            <p class="text-gray-600">
+                                Collection of UI designs for various applications and websites.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Figma</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">Dribbble</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <a href="https://dribbble.com/rafifqu" class="text-pink-500 hover:text-pink-700 transition">
+                                <i class="fab fa-dribbble text-xl"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -366,7 +435,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2">Manga One-Shot</h3>
                         <p class="text-gray-600 mb-4">
-                            Manga pendek dengan tema sci-fi terinspirasi cyberpunk Jepang.
+
                         </p>
                         <a href="#"
                             class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
@@ -507,7 +576,7 @@
                     <!-- Ibis Paint (Gunakan URL gambar langsung dari sumber lain) -->
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="../src/Ipaint.png" alt="Novelist" class="w-10 h-10">
+                            <img src="src/Ipaint.png" alt="Novelist" class="w-10 h-10">
                         </div>
                         <span class="text-sm text-gray-300">Ibis Paint</span>
                     </div>
@@ -515,7 +584,7 @@
                     <!-- Novelist (Ganti dengan ikon pena sebagai alternatif) -->
                     <div class="flex flex-col items-center">
                         <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="../src/Nov.png" alt="Novelist" class="w-10 h-10">
+                            <img src="src/Nov.png" alt="Novelist" class="w-10 h-10">
                         </div>
                         <span class="text-sm text-gray-300">Novelist</span>
                     </div>
