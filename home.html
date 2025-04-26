@@ -71,14 +71,23 @@
             </div>
 
             <div class="md:flex hidden items-center gap-4">
-                <a href="#home" class="text-gray-600 hover:text-red-500 transition">Home</a>
+                <a href="#home" class="text-gray-600 hover:text-red-500 transition" data-i18n="nav_home">Home</a>
                 <div class="w-[1px] h-5 bg-gray-300"></div>
-                <a href="#about" class="text-gray-600 hover:text-red-500 transition">About</a>
-                <a href="#projects" class="text-gray-600 hover:text-red-500 transition">Project</a>
-                <a href="#skills" class="text-gray-600 hover:text-red-500 transition">Skills</a>
-                <a href="#contact" class="text-gray-600 hover:text-red-500 transition">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-red-500 transition" data-i18n="nav_about">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-red-500 transition"
+                    data-i18n="nav_projects">Projects</a>
+                <a href="#skills" class="text-gray-600 hover:text-red-500 transition" data-i18n="nav_skills">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-500 transition"
+                    data-i18n="nav_contact">Contact</a>
             </div>
 
+            <!-- Language Selector -->
+            <select id="languageSelector"
+                class="ml-4 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none">
+                <option value="en">🇬🇧 EN</option>
+                <option value="id">🇮🇩 ID</option>
+                <option value="jp">🇯🇵 JP</option>
+            </select>
 
             <button id="menu-button" class="md:hidden text-gray-600 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
@@ -88,14 +97,19 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white px-4 py-2 shadow-md">
             <div class="flex flex-col space-y-3 py-2">
-                <a href="#home" class="text-gray-600 hover:text-red-500 transition py-1">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-red-500 transition py-1">About</a>
-                <a href="#projects" class="text-gray-600 hover:text-red-500 transition py-1">Proyek</a>
-                <a href="#skills" class="text-gray-600 hover:text-red-500 transition py-1">Skills</a>
-                <a href="#contact" class="text-gray-600 hover:text-red-500 transition py-1">Contact</a>
+                <a href="#home" class="text-gray-600 hover:text-red-500 transition py-1" data-i18n="nav_home">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-red-500 transition py-1"
+                    data-i18n="nav_about">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-red-500 transition py-1"
+                    data-i18n="nav_projects">Projects</a>
+                <a href="#skills" class="text-gray-600 hover:text-red-500 transition py-1"
+                    data-i18n="nav_skills">Skills</a>
+                <a href="#contact" class="text-gray-600 hover:text-red-500 transition py-1"
+                    data-i18n="nav_contact">Contact</a>
             </div>
         </div>
     </header>
+
 
     <!-- Hero Section -->
     <section id="home" class="min-h-screen pt-16 flex items-center wave-pattern px-4 md:px-16">
@@ -103,14 +117,16 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-800 leading-tight text-shadow pb-4">
-                        <span class="text-red-600">こんにちは</span>, Welcome!
+                        <span class="text-red-600" data-i18n="home_greeting">Hello</span>,
+                        <span data-i18n="home_welcome">Welcome!</span>
                     </h1>
-                    <p class="text-lg text-gray-600 mb-8">
+                    <p class="text-lg text-gray-600 mb-8" data-i18n="home_tagline">
                         Where ideas take shape, and creativity knows no limits.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#projects"
-                            class="px-8 py-3 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition text-center">
+                            class="px-8 py-3 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition text-center"
+                            data-i18n="home_see_projects">
                             See Projects
                         </a>
                         <a href="https://drive.google.com/file/d/1KLDX-DMrQKlytRRZTNn8TN7l_fosXZgY/view?usp=sharing"
@@ -118,21 +134,21 @@
                             class="px-8 py-3 border border-white text-gray-900 font-medium rounded-md transition text-center relative overflow-hidden group">
                             <span
                                 class="absolute inset-0 bg-white scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
-                            <span class="relative z-10 group-hover:text-red-500">Download CV</span>
+                            <span class="relative z-10 group-hover:text-red-500" data-i18n="home_download_cv">Download
+                                CV</span>
                         </a>
                     </div>
                 </div>
                 <!-- Container dengan styling Tailwind -->
                 <div class="md:w-1/2 flex justify-center relative group">
                     <!-- Gambar A (yang terlihat secara default) -->
-                    <img src="../src/ph1.png" alt="Gambar A"
+                    <img src="../src/ph1.png" alt="Profile Image"
                         class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 transition-opacity duration-300 ease-in-out group-hover:opacity-0" />
 
                     <!-- Gambar B (yang akan muncul saat hover, tetap di tempat) -->
-                    <img src="../src/ph2.png" alt="Gambar B"
+                    <img src="../src/ph2.png" alt="Alternative Profile Image"
                         class="rounded-lg shadow-xl md:max-w-[60%] h-auto transform -rotate-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out absolute" />
                 </div>
-
             </div>
         </div>
     </section>
@@ -151,15 +167,15 @@
                 </div>
                 <div class="md:w-3/5 md:px-10">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800 inline-flex items-center">
-                        <span class="mr-2">私について</span>
-                        <span class="text-red-600">About Me</span>
+                        <span class="mr-2" data-i18n="about_japanese">私について</span>
+                        <span class="text-red-600" data-i18n="about_title">About Me</span>
                     </h2>
-                    <p class="text-gray-600 mb-4 text-justify">
+                    <p class="text-gray-600 mb-4 text-justify" data-i18n="about_paragraph1">
                         I am a frontend and backend developer (full-stack developer), writer, and character designer. I
                         focus on developing functional, efficient, and user-friendly web applications while also
                         creating high-quality character designs and creative content.
                     </p>
-                    <p class="text-gray-600 mb-6 text-justify">
+                    <p class="text-gray-600 mb-6 text-justify" data-i18n="about_paragraph2">
                         With years of experience in the creative industry, I have developed a unique style and worked
                         with various clients and projects, both in teams and individually.
                     </p>
@@ -169,8 +185,9 @@
                             <div class="flex items-center">
                                 <i class="fas fa-paint-brush text-red-500 text-xl mr-[18px]"></i>
                                 <div>
-                                    <h3 class="font-semibold text-gray-800">Ilustrasi</h3>
-                                    <p class="text-sm text-gray-500">Design Character</p>
+                                    <h3 class="font-semibold text-gray-800" data-i18n="about_skill1_title">Ilustrasi
+                                    </h3>
+                                    <p class="text-sm text-gray-500" data-i18n="about_skill1_desc">Design Character</p>
                                 </div>
                             </div>
                         </div>
@@ -178,8 +195,10 @@
                             <div class="flex items-center">
                                 <i class="fas fa-desktop text-red-500 text-xl mr-3"></i>
                                 <div>
-                                    <h3 class="font-semibold text-gray-800">Desain UI/UX</h3>
-                                    <p class="text-sm text-gray-500">Design Website & Application
+                                    <h3 class="font-semibold text-gray-800" data-i18n="about_skill2_title">Desain UI/UX
+                                    </h3>
+                                    <p class="text-sm text-gray-500" data-i18n="about_skill2_desc">Design Website &
+                                        Application
                                     </p>
                                 </div>
                             </div>
@@ -188,8 +207,10 @@
                             <div class="flex items-center">
                                 <i class="fas fa-code text-red-500 text-xl mr-3"></i>
                                 <div>
-                                    <h3 class="font-semibold text-gray-800">Development</h3>
-                                    <p class="text-sm text-gray-500">Frontend $ Backend</p>
+                                    <h3 class="font-semibold text-gray-800" data-i18n="about_skill3_title">Development
+                                    </h3>
+                                    <p class="text-sm text-gray-500" data-i18n="about_skill3_desc">Frontend & Backend
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -197,9 +218,9 @@
                             <div class="flex items-center">
                                 <i class="fas fa-pen text-red-500 text-xl mr-3"></i>
                                 <div>
-                                    <h3 class="font-semibold text-gray-800">Storyboard
+                                    <h3 class="font-semibold text-gray-800" data-i18n="about_skill4_title">Storyboard
                                     </h3>
-                                    <p class="text-sm text-gray-500">Design Storyboard
+                                    <p class="text-sm text-gray-500" data-i18n="about_skill4_desc">Design Storyboard
                                     </p>
                                 </div>
                             </div>
@@ -215,49 +236,30 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">
-                    <span class="text-red-600">プロジェクト</span> Project
+                    <span class="text-red-600" data-i18n="projects_japanese">プロジェクト</span> 
+                    <span data-i18n="projects_title">Project</span>
                 </h2>
-                <p class="text-gray-600 max-w-xl mx-auto">
+                <p class="text-gray-600 max-w-xl mx-auto" data-i18n="projects_description">
                     Collection of best projects and works that I have done over the years.
                 </p>
             </div>
-
+    
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project -->
-                <!-- <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="/api/placeholder/400/300" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-gray-600 text-white text-xs font-bold px-2 py-1">
-                            ANIME
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Character Design</h3>
-                        <p class="text-gray-600 mb-4">
-                            Desain karakter untuk manga orisinal dengan tema post-apocalyptic.
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            Lihat Detail
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div> -->
-
-                <!-- Project -->
+    
+                <!-- Project 1 -->
                 <div
                     class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="src/ichlar.png" alt="placeholder"
+                        <img src="src/ichlar.png" alt="Ichlar Project"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10" data-i18n="project_tag_design_dev">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
                     <div class="p-6 bg-white relative z-10">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Ichlar Project</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project1_title">Ichlar Project</h3>
                         <div class="h-20 overflow-hidden mb-4">
-                            <p class="text-gray-600">
+                            <p class="text-gray-600" data-i18n="project1_description">
                                 Design and development of an interactive solar system learning website with immersive 3D
                                 visualizations.
                             </p>
@@ -272,30 +274,32 @@
                                 class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                            <a href="https://github.com/farda222/ichlar-web"
+                                class="text-gray-700 hover:text-gray-900 transition">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                            <a href="https://ichlar-web-3github-d13p99dc9-farda222.vercel.app/"
+                                class="text-red-600 hover:text-red-800 transition">
                                 <i class="fas fa-globe text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project -->
+    
+                <!-- Project 2 -->
                 <div
                     class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="src/wolu.png" alt="placeholder"
+                        <img src="src/wolu.png" alt="Wolu Classroom"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10" data-i18n="project_tag_design_dev">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
                     <div class="p-6 bg-white relative z-10">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Wolu Classroom</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project2_title">Wolu Classroom</h3>
                         <div class="h-20 overflow-hidden mb-4">
-                            <p class="text-gray-600">
+                            <p class="text-gray-600" data-i18n="project2_description">
                                 Design and development of a learning management system for schools.
                             </p>
                         </div>
@@ -309,30 +313,31 @@
                                 class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                            <a href="https://github.com/farda222/web-wolu"
+                                class="text-gray-700 hover:text-gray-900 transition">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                            <a href="https://woluclassroom.web.id/" class="text-red-600 hover:text-red-800 transition">
                                 <i class="fas fa-globe text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project -->
+    
+                <!-- Project 3 -->
                 <div
                     class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="src/rds.png" alt="placeholder"
+                        <img src="src/rds.png" alt="Reycom Document Solusi"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10" data-i18n="project_tag_design_dev">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
                     <div class="p-6 bg-white relative z-10">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Reycom Document Solusi</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project3_title">Reycom Document Solusi</h3>
                         <div class="h-20 overflow-hidden mb-4">
-                            <p class="text-gray-600">
+                            <p class="text-gray-600" data-i18n="project3_description">
                                 Design and development of an inventory management system for companies.
                             </p>
                         </div>
@@ -346,30 +351,33 @@
                                 class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                            <a href="https://github.com/Rfifn/open-rds"
+                                class="text-gray-700 hover:text-gray-900 transition">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#" class="text-red-600 hover:text-red-800 transition">
+                            <a href="#"
+                                class="text-red-600 transition pointer-events-none opacity-50 cursor-not-allowed"
+                                aria-disabled="true">
                                 <i class="fas fa-globe text-xl"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project -->
+    
+                <!-- Project 4 -->
                 <div
                     class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="src/ganesha.png" alt="placeholder"
+                        <img src="src/ganesha.png" alt="Ganesha Rent"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10" data-i18n="project_tag_design_dev">
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
                     <div class="p-6 bg-white relative z-10">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Wolu Classroom</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project4_title">Ganesha Rent</h3>
                         <div class="h-20 overflow-hidden mb-4">
-                            <p class="text-gray-600">
+                            <p class="text-gray-600" data-i18n="project4_description">
                                 Design and development of a learning management system for schools.
                             </p>
                         </div>
@@ -383,38 +391,41 @@
                                 class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Laravel</span>
                         </div>
                         <div class="flex space-x-3">
-                            <a href="#" class="text-gray-700 hover:text-gray-900 transition">
+                            <a href="https://github.com/Rfifn/ello"
+                                class="text-gray-700 hover:text-gray-900 transition">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="#" 
-   class="text-red-600 transition pointer-events-none opacity-50 cursor-not-allowed" 
-   aria-disabled="true">
-    <i class="fas fa-globe text-xl"></i>
-</a>
+                            <a href="#"
+                                class="text-red-600 transition pointer-events-none opacity-50 cursor-not-allowed"
+                                aria-disabled="true">
+                                <i class="fas fa-globe text-xl"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Project -->
+    
+                <!-- Project 5 -->
                 <div
                     class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
-                        <img src="src/dribbble.png" alt="placeholder"
+                        <img src="src/dribbble.png" alt="Design UI"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-2 py-1 z-10" data-i18n="project_tag_ui_design">
                             UI DESIGN
                         </div>
                     </div>
                     <div class="p-6 bg-white relative z-10">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Design UI</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project5_title">Design UI</h3>
                         <div class="h-20 overflow-hidden mb-4">
-                            <p class="text-gray-600">
+                            <p class="text-gray-600" data-i18n="project5_description">
                                 Collection of UI designs for various applications and websites.
                             </p>
                         </div>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Figma</span>
-                            <span class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">Dribbble</span>
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Figma</span>
+                            <span
+                                class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded">Dribbble</span>
                         </div>
                         <div class="flex space-x-3">
                             <a href="https://dribbble.com/rafifqu" class="text-pink-500 hover:text-pink-700 transition">
@@ -423,33 +434,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Project  -->
-                <!-- <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
-                    <div class="relative h-48">
-                        <img src="/api/placeholder/400/300" alt="placeholder" class="w-full h-full object-cover" />
-                        <div class="absolute top-0 right-0 bg-gray-500 text-white text-xs font-bold px-2 py-1">
-                            MANGA
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Manga One-Shot</h3>
-                        <p class="text-gray-600 mb-4">
-
-                        </p>
-                        <a href="#"
-                            class="text-red-500 font-medium inline-flex items-center hover:text-red-700 transition">
-                            See details
-                            <i class="fas fa-arrow-right ml-2 text-sm"></i>
-                        </a>
-                    </div>
-                </div> -->
             </div>
-
+    
             <div class="text-center mt-12">
                 <a href="#"
                     class="px-8 py-3 border border-red-500 text-red-500 font-medium rounded-md hover:bg-red-500 hover:text-white transition inline-flex items-center justify-center">
-                    See more
+                    <span data-i18n="projects_see_more">See more</span>
                     <i class="fas fa-plus ml-2"></i>
                 </a>
             </div>
@@ -458,193 +448,176 @@
 
     <!-- Skills Section -->
     <section id="skills" class="py-20 bg-gray-900 text-white px-4 md:px-16">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-2">
-                    <span class="text-red-400">スキル</span> Skills
-                </h2>
-                <p class="text-gray-300 max-w-xl mx-auto">
-                    My skills and expertise in the creative industry, from design to development.
-                </p>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-2">
+        <span class="text-red-400" data-i18n="skills_title_jp">スキル</span>
+        <span data-i18n="skills_title">Skills</span>
+      </h2>
+      <p class="text-gray-300 max-w-xl mx-auto" data-i18n="skills_description">
+        My skills and expertise in the creative industry, from design to development.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-12">
+      <div>
+        <h3 class="text-xl font-semibold mb-6 flex items-center" data-i18n="skills_design_title">
+          <i class="fas fa-pencil-alt mr-3 text-red-400"></i>
+          Desain & Ilustrasi
+        </h3>
+
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_illustration">Ilustrasi Anime/Manga</span>
+              <span class="text-sm font-medium text-gray-300">80%</span>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-16">
-                <div>
-                    <h3 class="text-xl font-semibold mb-6 flex items-center">
-                        <i class="fas fa-pencil-alt mr-3 text-red-400"></i>
-                        Desain & Ilustrasi
-                    </h3>
-
-                    <div class="space-y-6">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">Ilustrasi Anime/Manga</span>
-                                <span class="text-sm font-medium text-gray-300">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">Character Design</span>
-                                <span class="text-sm font-medium text-gray-300">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">UI/UX Design</span>
-                                <span class="text-sm font-medium text-gray-300">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">Storyboarding</span>
-                                <span class="text-sm font-medium text-gray-300">75%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-semibold mb-6 flex items-center">
-                        <i class="fas fa-code mr-3 text-red-400"></i>
-                        Development
-                    </h3>
-
-                    <div class="space-y-6 ease-out">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">HTML/CSS</span>
-                                <span class="text-sm font-medium text-gray-300">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">JavaScript</span>
-                                <span class="text-sm font-medium text-gray-300">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">Tailwind CSS</span>
-                                <span class="text-sm font-medium text-gray-300">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-300">Laravel</span>
-                                <span class="text-sm font-medium text-gray-300">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-2">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
             </div>
+          </div>
 
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_character">Character Design</span>
+              <span class="text-sm font-medium text-gray-300">80%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
 
-            <div class="mt-20">
-                <h3 class="text-xl font-semibold mb-6 text-center">Tools & Software</h3>
-                <div class="flex flex-wrap justify-center gap-6">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_uiux">UI/UX Design</span>
+              <span class="text-sm font-medium text-gray-300">85%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
 
-                    <!-- Ibis Paint (Gunakan URL gambar langsung dari sumber lain) -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="src/Ipaint.png" alt="Novelist" class="w-10 h-10">
-                        </div>
-                        <span class="text-sm text-gray-300">Ibis Paint</span>
-                    </div>
-
-                    <!-- Novelist (Ganti dengan ikon pena sebagai alternatif) -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="src/Nov.png" alt="Novelist" class="w-10 h-10">
-                        </div>
-                        <span class="text-sm text-gray-300">Novelist</span>
-                    </div>
-
-                    <!-- VSCode -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-                                alt="VSCode" class="w-10 h-10">
-                        </div>
-                        <span class="text-sm text-gray-300">VSCode</span>
-                    </div>
-
-                    <!-- Figma -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                alt="Figma" class="w-10 h-10">
-                        </div>
-                        <span class="text-sm text-gray-300">Figma</span>
-                    </div>
-
-                    <!-- GitHub -->
-                    <div class="flex flex-col items-center">
-                        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-                                alt="GitHub" class="w-10 h-10">
-                        </div>
-                        <span class="text-sm text-gray-300">GitHub</span>
-                    </div>
-
-                    <!-- After Effects
-    <div class="flex flex-col items-center">
-        <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_logo.svg" alt="After Effects" class="w-10 h-10">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_storyboard">Storyboarding</span>
+              <span class="text-sm font-medium text-gray-300">75%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
         </div>
-        <span class="text-sm text-gray-300">After Effects</span>
-    </div> -->
+      </div>
 
-                </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-6 flex items-center" data-i18n="skills_dev_title">
+          <i class="fas fa-code mr-3 text-red-400"></i>
+          Development
+        </h3>
 
+        <div class="space-y-6 ease-out">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_html">HTML/CSS</span>
+              <span class="text-sm font-medium text-gray-300">95%</span>
             </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_js">JavaScript</span>
+              <span class="text-sm font-medium text-gray-300">80%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_tailwind">Tailwind CSS</span>
+              <span class="text-sm font-medium text-gray-300">85%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-1">
+              <span class="text-sm font-medium text-gray-300" data-i18n="skills_laravel">Laravel</span>
+              <span class="text-sm font-medium text-gray-300">85%</span>
+            </div>
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-red-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <div class="mt-20">
+      <h3 class="text-xl font-semibold mb-6 text-center" data-i18n="skills_tools_title">Tools & Software</h3>
+      <div class="flex flex-wrap justify-center gap-6">
+
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
+            <img src="src/Ipaint.png" alt="Ibis Paint" class="w-10 h-10">
+          </div>
+          <span class="text-sm text-gray-300">Ibis Paint</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
+            <img src="src/Nov.png" alt="Novelist" class="w-10 h-10">
+          </div>
+          <span class="text-sm text-gray-300">Novelist</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" class="w-10 h-10">
+          </div>
+          <span class="text-sm text-gray-300">VSCode</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-10 h-10">
+          </div>
+          <span class="text-sm text-gray-300">Figma</span>
+        </div>
+
+        <div class="flex flex-col items-center">
+          <div class="w-16 h-16 bg-white bg-opacity-10 rounded-lg flex items-center justify-center mb-2">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-10 h-10">
+          </div>
+          <span class="text-sm text-gray-300">GitHub</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Call to Action -->
     <section class="py-20 bg-red-600 text-white px-4 md:px-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">
-                Interested in working together?
-            </h2>
-            <p class="text-xl mb-8 max-w-xl mx-auto">
-                Let's create something amazing together. Contact me for inquiries or collaborations.
-            </p>
-            <a href="#contact"
-                class="px-8 py-3 bg-white text-red-600 font-medium rounded-md hover:bg-gray-100 transition inline-block">
-                Contact Me
-            </a>
+          <h2 class="text-3xl font-bold mb-4" data-i18n="contact_cta_title">
+            Interested in working together?
+          </h2>
+          <p class="text-xl mb-8 max-w-xl mx-auto" data-i18n="contact_cta_description">
+            Let's create something amazing together. Contact me for inquiries or collaborations.
+          </p>
+          <a href="#contact" class="px-8 py-3 bg-white text-red-600 font-medium rounded-md hover:bg-gray-100 transition inline-block" data-i18n="contact_cta_button">
+            Contact Me
+          </a>
         </div>
-    </section>
+      </section>
 
     <!-- Contact Section -->
     <!-- Contact Section (lanjutan) -->
@@ -653,101 +626,87 @@
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 md:pr-8 mb-10 md:mb-0">
                     <h2 class="text-3xl font-bold mb-6 text-gray-800 lg:px-8">
-                        <span class="text-red-600">連絡先</span> Contact
+                        <span class="text-red-600" data-i18n="contact_title">Contact</span>
                     </h2>
-                    <p class="text-gray-600 mb-8">
+                    <p class="text-gray-600 mb-8" data-i18n="contact_description">
                         Have a question or want to work together? Feel free to contact me through the following methods.
                     </p>
-
+    
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start">
                             <div class="mr-4 mt-1">
                                 <i class="fas fa-map-marker-alt text-red-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-gray-800">Location</h3>
-                                <p class="text-gray-600">Semarang, Center Java, Indonesia</p>
+                                <h3 class="font-semibold text-gray-800" data-i18n="contact_location_title">Location</h3>
+                                <p class="text-gray-600" data-i18n="contact_location">Semarang, Center Java, Indonesia</p>
                             </div>
                         </div>
-
+    
                         <div class="flex items-start">
                             <div class="mr-4 mt-1">
                                 <i class="fas fa-envelope text-red-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-gray-800">Email</h3>
-                                <p class="text-gray-600">ralphaaditya17@gmail.com</p>
+                                <h3 class="font-semibold text-gray-800" data-i18n="contact_email_title">Email</h3>
+                                <p class="text-gray-600" data-i18n="contact_email">ralphaaditya17@gmail.com</p>
                             </div>
                         </div>
-
+    
                         <div class="flex items-start">
                             <div class="mr-4 mt-1">
                                 <i class="fas fa-phone-alt text-red-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-gray-800">Phone</h3>
-                                <p class="text-gray-600">+62 819 0476 9603</p>
+                                <h3 class="font-semibold text-gray-800" data-i18n="contact_phone_title">Phone</h3>
+                                <p class="text-gray-600" data-i18n="contact_phone">+62 819 0476 9603</p>
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
+                            <i class="fab fa-instagram" data-i18n="contact_social_instagram"></i>
                         </a>
-                        <!-- <a href="#"
-                            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
-                            <i class="fab fa-twitter"></i>
-                        </a> -->
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
-                            <i class="fab fa-github"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
+                            <i class="fab fa-github" data-i18n="contact_social_github"></i>
                         </a>
-
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
-                            <i class="fab fa-dribbble"></i>
+                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-red-500 hover:text-white transition">
+                            <i class="fab fa-dribbble" data-i18n="contact_social_dribbble"></i>
                         </a>
                     </div>
                 </div>
-
+    
                 <div class="md:w-1/2">
-                    <form class="bg-gray-50 p-6 rounded-lg shadow-sm" action="https://formspree.io/f/xpwqvjrv"
-                        method="POST">
+                    <form class="bg-gray-50 p-6 rounded-lg shadow-sm" action="https://formspree.io/f/xpwqvjrv" method="POST">
                         <div class="mb-4">
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                            <input type="text" id="name" name="name" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_name">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
-
+    
                         <div class="mb-4">
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                            <input type="email" id="email" name="email" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_email_label">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
-
+    
                         <div class="mb-4">
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <input type="text" id="subject" name="subject" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
-
+    
                         <div class="mb-4">
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="contact_message">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
                         </div>
-
-                        <button type="submit"
-                            class="w-full bg-red-600 text-white font-medium py-2 px-4 rounded-md hover:bg-red-700 transition">
+    
+                        <button type="submit" class="w-full bg-red-600 text-white font-medium py-2 px-4 rounded-md hover:bg-red-700 transition" data-i18n="contact_button">
                             Send Message
                         </button>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 px-4 md:px-16">
@@ -755,62 +714,58 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center space-x-2 mb-4">
-                        <span class="text-red-500 text-2xl font-bold">日本</span>
-                        <span class="text-white font-semibold">Portfolio</span>
+                        <span class="text-red-500 text-2xl font-bold" data-i18n="footer_title_jp">日本</span>
+                        <span class="text-white font-semibold" data-i18n="footer_title">Portfolio</span>
                     </div>
-                    <p class="text-gray-400 max-w-xs">
+                    <p class="text-gray-400 max-w-xs" data-i18n="footer_description">
                         Where ideas take shape, and creativity knows no limits.
                     </p>
                 </div>
-
+    
                 <div class="grid grid-cols-2 gap-8 mb-6 md:mb-0">
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <h3 class="text-lg font-semibold mb-4" data-i18n="footer_navigation_title">Navigation</h3>
                         <ul class="space-y-2">
-                            <li><a href="#home" class="text-gray-400 hover:text-red-400 transition">Home</a></li>
-                            <li><a href="#about" class="text-gray-400 hover:text-red-400 transition">About</a></li>
-                            <li><a href="#projects" class="text-gray-400 hover:text-red-400 transition">Project</a></li>
-                            <li><a href="#skills" class="text-gray-400 hover:text-red-400 transition">Skills</a></li>
-                            <li><a href="#contact" class="text-gray-400 hover:text-red-400 transition">Contact</a></li>
+                            <li><a href="#home" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_home">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_about">About</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_project">Project</a></li>
+                            <li><a href="#skills" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_skills">Skills</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_contact">Contact</a></li>
                         </ul>
                     </div>
-
+    
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Services</h3>
+                        <h3 class="text-lg font-semibold mb-4" data-i18n="footer_services_title">Services</h3>
                         <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Character Design</a>
-                            </li>
-                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition">UI/UX Design</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Web Development</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Design</a></li>
-                            <!-- <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Konsultasi</a></li> -->
+                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_service_1">Character Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_service_2">UI/UX Design</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_service_3">Web Development</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-red-400 transition" data-i18n="footer_service_4">Design</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+    
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">
-                    &copy; 2025 Japan Portfolio. All rights reserved.
+                <p class="text-gray-400 text-sm mb-4 md:mb-0" data-i18n="footer_rights">
+                    &copy; 2025 Rapipu Portfolio. All rights reserved.
                 </p>
-
+    
                 <div class="flex gap-6">
                     <a href="#" class="text-gray-400 hover:text-red-400 transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <!-- <a href="#" class="text-gray-400 hover:text-red-400 transition">
-                        <i class="fab fa-twitter"></i>
-                    </a> -->
-                    <a href="#" class="text-gray-400 hover:text-red-400 transition">
-                        <i class="fab fa-github"></i>
+                        <i class="fab fa-instagram" data-i18n="footer_instagram"></i>
                     </a>
                     <a href="#" class="text-gray-400 hover:text-red-400 transition">
-                        <i class="fab fa-dribbble"></i>
+                        <i class="fab fa-github" data-i18n="footer_github"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-400 transition">
+                        <i class="fab fa-dribbble" data-i18n="footer_dribbble"></i>
                     </a>
                 </div>
             </div>
         </div>
     </footer>
+    
 
     <!-- JavaScript -->
     <script src="./js/script.js"></script>
