@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
       contact_message: "メッセージ",
       contact_button: "メッセージを送信",
       footer_title: "ポートフォリオ",
-            footer_title_jp: "日本",
+            footer_title_jp: "インドネシア",
             footer_description: "アイデアが形になり、創造性に限界はない。",
             footer_navigation_title: "ナビゲーション",
             footer_home: "ホーム",
