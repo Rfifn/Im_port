@@ -394,33 +394,47 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     
     const selector = document.getElementById("languageSelector");
-    
-    selector.addEventListener("change", function () {
-      const selectedLang = this.value;
-      updateLanguage(selectedLang);
-      localStorage.setItem("preferredLang", selectedLang);
+    const selectors = [
+    document.getElementById("languageSelector"),
+    document.getElementById("languageSelectorMobile")
+  ];
+
+  // Update text and sync both selectors
+  function updateLanguage(lang) {
+    // Sync both selectors
+    selectors.forEach(sel => {
+      if (sel) sel.value = lang;
     });
-    
-    function updateLanguage(lang) {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
+
+    // Update text content
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  }
+
+  // Add change event to both selectors
+  selectors.forEach(selector => {
+    if (selector) {
+      selector.addEventListener("change", function () {
+        const selectedLang = this.value;
+        updateLanguage(selectedLang);
+        localStorage.setItem("preferredLang", selectedLang);
       });
     }
-    
-    // Load saved language
-    document.addEventListener("DOMContentLoaded", function() {
-      const savedLang = localStorage.getItem("preferredLang") || "en";
-      selector.value = savedLang;
-      updateLanguage(savedLang);
-    });
-    
-    // If page is already loaded
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-      const savedLang = localStorage.getItem("preferredLang") || "en";
-      selector.value = savedLang;
-      updateLanguage(savedLang);
-    }
+  });
+
+  // On page load
+  document.addEventListener("DOMContentLoaded", function () {
+    const savedLang = localStorage.getItem("preferredLang") || "en";
+    updateLanguage(savedLang);
+  });
+
+  // Extra check if DOM already loaded
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    const savedLang = localStorage.getItem("preferredLang") || "en";
+    updateLanguage(savedLang);
+  }
   });
