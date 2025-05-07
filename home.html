@@ -63,7 +63,7 @@
     <div id="gradientCircle" class="gradient-circle"></div>
 
     <!-- Header / Navbar -->
-    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 px-10 py-2">
+    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 px-4 py-2">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-red-600 text-2xl font-bold">日本</span>
@@ -83,11 +83,19 @@
 
             <!-- Language Selector -->
             <select id="languageSelector"
-                class="ml-4 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none md:block">
-                <option value="en">🇬🇧 EN</option>
-                <option value="id">🇮🇩 ID</option>
-                <option value="jp">🇯🇵 JP</option>
-            </select>
+    class="ml-4 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none block md:hidden">
+    <option value="en">🇬🇧</option>
+    <option value="id">🇮🇩</option>
+    <option value="jp">🇯🇵</option>
+</select>
+
+<select id="languageSelectorDesktop"
+    class="ml-4 border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none hidden md:block">
+    <option value="en">🇬🇧 EN</option>
+    <option value="id">🇮🇩 ID</option>
+    <option value="jp">🇯🇵 JP</option>
+</select>
+
 
             <button id="menu-button" class="md:hidden text-gray-600 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
