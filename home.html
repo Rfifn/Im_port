@@ -56,14 +56,25 @@
         .wave-pattern {
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23f3f4f6' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
+
+        .form-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .form-element.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
-<body class="">
+<body class="font-sans">
     <div id="gradientCircle" class="gradient-circle"></div>
 
     <!-- Header / Navbar -->
-    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 px-4 py-2">
+    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50 px-4 py-2 font-sans">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-red-600 text-2xl font-bold">日本</span>
@@ -82,19 +93,18 @@
             </div>
 
             <!-- Language Selector -->
-            <select id="languageSelector"
-    class="ml-4 rounded px-2 py-1 text-sm focus:outline-none block md:hidden">
-    <option value="en">🇬🇧</option>
-    <option value="id">🇮🇩</option>
-    <option value="jp">🇯🇵</option>
-</select>
+            <select id="languageSelector" class="ml-4 rounded px-2 py-1 text-sm focus:outline-none block md:hidden">
+                <option value="en">🇬🇧</option>
+                <option value="id">🇮🇩</option>
+                <option value="jp">🇯🇵</option>
+            </select>
 
-<select id="languageSelectorDesktop"
-    class="ml-4 rounded px-2 py-1 text-sm focus:outline-none hidden md:block">
-    <option value="en">🇬🇧 EN</option>
-    <option value="id">🇮🇩 ID</option>
-    <option value="jp">🇯🇵 JP</option>
-</select>
+            <select id="languageSelectorDesktop"
+                class="ml-4 rounded px-2 py-1 text-sm focus:outline-none hidden md:block">
+                <option value="en">🇬🇧 EN</option>
+                <option value="id">🇮🇩 ID</option>
+                <option value="jp">🇯🇵 JP</option>
+            </select>
 
 
             <button id="menu-button" class="md:hidden text-gray-600 focus:outline-none">
@@ -118,13 +128,12 @@
         </div>
     </header>
 
-
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen pt-16 flex items-center wave-pattern px-4 md:px-16">
+    <section id="home" class="min-h-screen pt-16 flex items-center wave-pattern px-4 md:px-16 form-element">
         <div class="container mx-auto px-4 py-20 md:py-32">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 text-gray-800 leading-tight text-shadow pb-4">
+                    <h1 class="text-4xl md:text-6xl font-medium mb-4 text-gray-800 leading-tight text-shadow pb-4">
                         <span class="text-red-600" data-i18n="home_greeting">Hello</span>,
                         <span data-i18n="home_welcome">Welcome!</span>
                     </h1>
@@ -250,11 +259,11 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
                 <!-- Project 1 -->
                 <div
-                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    class="h-full flex flex-col project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
                         <img src="src/ichlar.png" alt="Ichlar Project"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
@@ -263,7 +272,7 @@
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6 bg-white relative z-10">
+                    <div class="p-6 bg-white relative z-10 flex-grow">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project1_title">Ichlar Project
                         </h3>
                         <div class="h-20 overflow-hidden mb-4">
@@ -296,7 +305,7 @@
 
                 <!-- Project 2 -->
                 <div
-                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    class="h-full flex flex-col project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
                         <img src="src/wolu.png" alt="Wolu Classroom"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
@@ -305,7 +314,7 @@
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6 bg-white relative z-10">
+                    <div class="p-6 bg-white relative z-10 flex-grow">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project2_title">Wolu Classroom
                         </h3>
                         <div class="h-20 overflow-hidden mb-4">
@@ -336,7 +345,7 @@
 
                 <!-- Project 3 -->
                 <div
-                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    class="h-full flex flex-col project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
                         <img src="src/rds.png" alt="Reycom Document Solusi"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
@@ -345,7 +354,7 @@
                             UI DESIGN & DEVELOPMENT
                         </div>
                     </div>
-                    <div class="p-6 bg-white relative z-10">
+                    <div class="p-6 bg-white relative z-10 flex-grow">
                         <h3 class="text-xl font-semibold text-gray-800 mb-2" data-i18n="project3_title">Reycom Document
                             Solusi</h3>
                         <div class="h-20 overflow-hidden mb-4">
@@ -378,7 +387,7 @@
 
                 <!-- Project 4 -->
                 <div
-                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    class="h-full flex flex-col project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
                         <img src="src/ganesha.png" alt="Ganesha Rent"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
@@ -420,7 +429,7 @@
 
                 <!-- Project 5 -->
                 <div
-                    class="project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
+                    class="h-full flex flex-col project-card bg-white rounded-lg overflow-hidden shadow-md max-w-md mx-auto transition duration-300 ease-in-out hover:shadow-lg">
                     <div class="relative h-48 overflow-hidden">
                         <img src="src/dribbble.png" alt="Design UI"
                             class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
@@ -706,42 +715,44 @@
                     </div>
                 </div>
 
-                <div class="md:w-1/2">
+                <div class="md:w-1/2 w-full max-w-md">
                     <form class="bg-gray-50 p-6 rounded-lg shadow-sm" action="https://formspree.io/f/xpwqvjrv"
                         method="POST">
-                        <div class="mb-4">
+                        <div class="mb-4 form-element">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1"
                                 data-i18n="contact_name">Name</label>
                             <input type="text" id="name" name="name" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-4 form-element">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1"
                                 data-i18n="contact_email_label">Email</label>
                             <input type="email" id="email" name="email" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-4 form-element">
                             <label for="subject" class="block text-sm font-medium text-gray-700 mb-1"
                                 data-i18n="contact_subject">Subject</label>
                             <input type="text" id="subject" name="subject" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
 
-                        <div class="mb-4">
+                        <div class="mb-4 form-element">
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1"
                                 data-i18n="contact_message">Message</label>
                             <textarea id="message" name="message" rows="4" required
                                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="w-full bg-red-600 text-white font-medium py-2 px-4 rounded-md hover:bg-red-700 transition"
-                            data-i18n="contact_button">
-                            Send Message
-                        </button>
+                        <div class="form-element">
+                            <button type="submit"
+                                class="w-full bg-red-600 text-white font-medium py-2 px-4 rounded-md hover:bg-red-700 transition"
+                                data-i18n="contact_button">
+                                Send Message
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -752,7 +763,7 @@
     <footer class="bg-gray-900 text-white py-12 px-4 md:px-16">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
+                <div class="mb-6 md:mb-0 form-element">
                     <div class="flex items-center space-x-2 mb-4">
                         <span class="text-red-500 text-2xl font-bold" data-i18n="footer_title_jp">日本</span>
                         <span class="text-white font-semibold" data-i18n="footer_title">Portfolio</span>
@@ -762,7 +773,7 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-8 mb-6 md:mb-0">
+                <div class="grid grid-cols-2 gap-8 mb-6 md:mb-0 form-element">
                     <div>
                         <h3 class="text-lg font-semibold mb-4" data-i18n="footer_navigation_title">Navigation</h3>
                         <ul class="space-y-2">
