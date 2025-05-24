@@ -622,4 +622,50 @@ document.addEventListener('DOMContentLoaded', () => {
     .project-card:nth-child(5) { animation-delay: 0.25s; }
   `;
   document.head.appendChild(styleSheet);
+  
 });
+  const words = [
+    { text: "developer", color: "text-red-600", stroke: "#ef4444" },
+    { text: "desainer", color: "text-red-600", stroke: "#ef4444" },
+    { text: "writer", color: "text-red-600", stroke: "#ef4444" },
+  ];
+
+  let i = 0;
+  const wordEl = document.getElementById("changing-word");
+  const svgVariants = document.querySelectorAll(".underline");
+
+  function changeWord() {
+    // Fade out text
+    wordEl.classList.add("opacity-0", "translate-y-2");
+
+    // Fade out all SVGs
+    svgVariants.forEach(svg => svg.classList.remove("opacity-100"));
+    svgVariants.forEach(svg => svg.classList.add("opacity-0"));
+
+    setTimeout(() => {
+      // Next word
+      i = (i + 1) % words.length;
+      const { text, color, stroke } = words[i];
+      wordEl.textContent = text;
+      wordEl.className = `${color} transition-all duration-[1500ms] ease-in-out inline-block opacity-0 translate-y-2`;
+
+      // Random pick one SVG
+      const randomIdx = Math.floor(Math.random() * svgVariants.length);
+      svgVariants.forEach((svg, idx) => {
+        const path = svg.querySelector("path");
+        path.setAttribute("stroke", stroke);
+        if (idx === randomIdx) {
+          svg.classList.remove("opacity-0");
+          svg.classList.add("opacity-100");
+        }
+      });
+
+      // Fade in text
+      requestAnimationFrame(() => {
+        wordEl.classList.remove("opacity-0", "translate-y-2");
+        wordEl.classList.add("opacity-100", "translate-y-0");
+      });
+    }, 300); // delay after fade out
+  }
+
+  setInterval(changeWord, 3000);
